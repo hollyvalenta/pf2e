@@ -32,39 +32,44 @@
             "title": "Beyond the Blood Door Player's Guide"
         },
         "rules": [
-            {
-                "adjustName": false,
-                "choices": [
-                    {
-                        "label": "PF2E.Skill.Diplomacy",
-                        "value": {
-                            "feat": "Compendium.sf2e.feats.Item.No Cause for Alarm",
-                            "skill": "diplomacy"
-                        }
-                    },
-                    {
-                        "label": "PF2E.Skill.Medicine",
-                        "value": {
-                            "feat": "Compendium.sf2e.feats.Item.Battle Medicine",
-                            "skill": "medicine"
-                        }
-                    }
-                ],
-                "flag": "advocate",
-                "key": "ChoiceSet",
-                "prompt": "PF2E.SpecificRule.Prompt.Skill"
-            },
-            {
-                "key": "ActiveEffectLike",
-                "mode": "upgrade",
-                "path": "system.skills.{item|flags.system.rulesSelections.advocate.skill}.rank",
-                "value": 1
-            },
-            {
-                "key": "GrantItem",
-                "uuid": "{item|flags.system.rulesSelections.advocate.feat}"
-            }
+      {
+        "adjustName": false,
+        "choices": [
+          {
+            "label": "PF2E.Skill.Diplomacy",
+            "value": "diplomacy"
+          },
+          {
+            "label": "PF2E.Skill.Medicine",
+            "value": "medicine"
+          }
         ],
+        "flag": "skill",
+        "key": "ChoiceSet",
+        "prompt": "PF2E.SpecificRule.Prompt.Skill",
+        "rollOption": "advocate"
+      },
+      {
+        "key": "ActiveEffectLike",
+        "mode": "upgrade",
+        "path": "system.skills.{item|flags.system.rulesSelections.skill}.rank",
+        "value": 1
+      },
+      {
+        "key": "GrantItem",
+        "uuid": "Compendium.sf2e.feats.Item.6ON8DjFXSMITZleX",
+        "predicate": [
+          "advocate:diplomacy"
+        ]
+      },
+      {
+        "key": "GrantItem",
+        "uuid": "Compendium.sf2e.feats.Item.wYerMk6F1RZb0Fwt",
+        "predicate": [
+          "advocate:medicine"
+        ]
+      }
+    ],
         "trainedSkills": {
             "lore": [
                 "Legal Lore"
